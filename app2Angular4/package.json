@@ -1,0 +1,36 @@
+{
+  "name": "single-spa-portal-example-angular4",
+  "version": "1.0.0",
+  "description": "Angular 4 App that will be bundled into a library to be loaded on demand by a simpleSPA Portal App",
+  "scripts": {
+    "watch": "webpack-dev-server --port 9002",
+    "build": "webpack -p --progress"
+  },
+  "author": "Michael Ruecker",
+  "license": "MIT",
+  "homepage": "",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "ts-loader": "^2.3.2",
+    "typescript": "^2.4.2",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.8.2"
+  },
+  "dependencies": {
+    "@angular/common": "^4.3.3",
+    "@angular/compiler": "^4.3.3",
+    "@angular/core": "^4.3.3",
+    "@angular/platform-browser": "^4.3.3",
+    "@angular/platform-browser-dynamic": "^4.3.3",
+    "@angular/router": "^4.3.6",
+    "core-js": "^2.4.1",
+    "es6-promise": "^4.1.1",
+    "reflect-metadata": "^0.1.10",
+    "rxjs": "^5.4.2",
+    "single-spa-angular2": "^1.1.0",
+    "zone.js": "^0.8.16"
+  }
+}

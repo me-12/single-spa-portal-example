@@ -1,0 +1,34 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111D4A;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 100%;
+}
+
+.navbar li {
+    padding-right: 24px;
+    height: 100%;
+}
+
+.navbar li:hover {
+    opacity: 0.8;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
