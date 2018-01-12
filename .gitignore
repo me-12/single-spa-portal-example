@@ -65,3 +65,7 @@ typings/
 
 # release folders
 release
+
+# git
+git
+git.pub
