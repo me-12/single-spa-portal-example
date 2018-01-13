@@ -27,7 +27,7 @@ function domElementGetter() {
 	let el = document.getElementById('app1');
 	if (!el) {
 		el = document.createElement('div');
-		el.id = 'app1React';
+		el.id = 'app1';
 		document.body.appendChild(el);
 	}
 
