@@ -3,10 +3,10 @@ The goal of this project is to provide an example of how to build a portal like 
 
 This example is based on [simple-single-spa-webpack-example](https://github.com/joeldenning/simple-single-spa-webpack-example/blob/master/README.md) but will provide further features like:
 
-- Isolate SPA's with their own build process
-- Load SPA's on demand with SystemJS
-- Support multiple Angular versions without zone.js conflicts
-- Provide a way to communicate between each SPA
+- [x] Isolate SPA's with their own build process
+- [x] Load SPA's on demand with SystemJS
+- [ ] Support multiple Angular versions without zone.js conflicts
+- [ ] Provide a way to communicate between each SPA
 
 
 ## How to use it
