@@ -19,4 +19,4 @@ function reducer(state = initialState, action) {
     }
 }
 
-export const store = createStore(reducer);
+export const storeInstance = createStore(reducer);

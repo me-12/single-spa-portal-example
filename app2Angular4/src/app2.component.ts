@@ -1,7 +1,7 @@
 import { Component, forwardRef, Inject, OnDestroy } from '@angular/core';
 import { NgRedux } from '@angular-redux/store';
-import { CounterActions } from './app.actions';
-import { IAppState } from "./store";
+import { IAppState, CounterActions } from "./app2Store";
+import {Globals} from "./globals.service";
 
 @Component({
 	selector: 'app2',
@@ -9,13 +9,25 @@ import { IAppState } from "./store";
 		<div style="margin-top: 100px;">
 			This was rendered by App2 which is written in Angular 4
 		</div>
+        <br />
 
         <div>
-            Count: {{ count }}
-            <button (click)="increment()">+</button>
-            <button (click)="decrement()">-</button>
+            <b> Count: {{ count }}</b><br/><br/>
+            <button (click)="increment()">local increment</button>&nbsp;Send a <b>local</b> increment event. This will
+            only increase the counter for the current app. <br/>
+            
+            <button (click)="decrement()">local decrement</button>&nbsp;Send a <b>local</b> decrement event. This will
+            only decrement the counter for the current app. <br/>
+
+            
+            <button (click)="globalIncrement()">global increment</button>&nbsp;Send a <b>global</b> increment event.
+            This will increase the counter for the current app and all other apps that listen to this event. <br/>
+            
+            <button (click)="globalDecrement()">global decrement</button>&nbsp;Send a <b>global</b> decrement event.
+            This will increase the counter for the current app and all other apps that listen to this event. <br/>
         </div>
 		
+        <br />
 		<a [routerLink]="['/subroute1']" routerLinkActive="active">Angular route 1</a>
 		<a [routerLink]="['/subroute2']" routerLinkActive="active">Angular route 2</a>
 
@@ -28,11 +40,11 @@ export class App2 {
 
     constructor(
         @Inject(forwardRef(() => NgRedux)) private ngRedux: NgRedux<IAppState>,
-        @Inject(forwardRef(() => CounterActions)) private actions: CounterActions) {
+        @Inject(forwardRef(() => CounterActions)) private actions: CounterActions,
+        @Inject(forwardRef(() => Globals)) private globals:Globals) {
         this.subscription = ngRedux.select<number>('count')
             .subscribe(newCount => this.count = newCount);
     }
-
 
     ngOnDestroy() {
         this.subscription.unsubscribe();
@@ -44,5 +56,13 @@ export class App2 {
 
     decrement() {
         this.ngRedux.dispatch(this.actions.decrement());
+    }
+
+    globalIncrement() {
+        this.globals.globalEventDistributor.dispatch(this.actions.increment());
+    }
+
+    globalDecrement() {
+        this.globals.globalEventDistributor.dispatch(this.actions.decrement());
     }
 }

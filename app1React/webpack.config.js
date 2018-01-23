@@ -2,7 +2,8 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        main: './src/app1.js'
+        main: './src/app1.js',
+        store: './src/app1Store.js'
     },
 
     output: {

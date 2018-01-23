@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import singleSpaReact from 'single-spa-react';
+import singleSpaReact from '../libs/single-spa-react'; // waiting for this to be merged: https://github.com/CanopyTax/single-spa-react/pull/27
 import Root from './root.component.js';
 
 const reactLifecycles = singleSpaReact({
@@ -15,7 +15,10 @@ export function bootstrap(props) {
 }
 
 export function mount(props) {
-	return reactLifecycles.mount(props);
+	return reactLifecycles.mount(props).then((rootComponent) => {
+        rootComponent.setStore(props.customProps.store);
+        rootComponent.setGlobalEventDistributor(props.customProps.globalEventDistributor);
+    });
 }
 
 export function unmount(props) {
