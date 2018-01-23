@@ -13,17 +13,14 @@ const angularLifecycles = singleSpaAngular1({
 });
 
 export function bootstrap(props) {
-    console.log('bootstrap');
     return angularLifecycles.bootstrap(props);
 }
 
 export function mount(props) {
-    console.log('mount');
     return angularLifecycles.mount(props);
 }
 
 export function unmount(props) {
-    console.log('bootstrap');
     return angularLifecycles.unmount(props);
 }
 

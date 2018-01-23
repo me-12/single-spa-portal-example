@@ -1,15 +1,21 @@
-import * as singleSpa from 'single-spa';
+import * as singleSpa from '../libs/single-spa'; // waiting for this to be merged: https://github.com/CanopyTax/single-spa/pull/156
+import { GlobalEventDistributor } from './globalEventDistributor'
+import { loadApp } from './helper'
 
+async function init() {
+    const globalEventDistributor = new GlobalEventDistributor();
 
-singleSpa.declareChildApplication('app1', () =>  SystemJS.import('http://localhost:9001/release/main.js'), hashPrefix('/app1'));
-singleSpa.declareChildApplication('app2', () =>  SystemJS.import('http://localhost:9002/release/main.js'), hashPrefix('/app2'));
-singleSpa.declareChildApplication('app3', () =>  SystemJS.import('http://localhost:9003/release/main.js'), hashPrefix('/app3'));
+    // app1
+    await loadApp('app1', '/app1', 'http://localhost:9001/release/main.js', 'http://localhost:9001/release/store.js', globalEventDistributor);
 
-singleSpa.start();
+    // app2
+    await loadApp('app2', '/app2', 'http://localhost:9002/release/main.js', 'http://localhost:9002/release/store.js', globalEventDistributor);
 
+    // app3
+    await loadApp('app3', '/app3', 'http://localhost:9003/release/main.js', null, null); // does not have a store, so we pass null
 
-function hashPrefix(prefix) {
-    return function(location) {
-        return location.hash.startsWith(`#${prefix}`);
-    }
+    singleSpa.start();
 }
+
+init();
+

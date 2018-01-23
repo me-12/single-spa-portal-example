@@ -1,4 +1,4 @@
-import {forwardRef, Inject, NgModule} from '@angular/core';
+import {forwardRef, Inject, Injectable, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {App2} from './app2.component';
 import {Subroute1} from './subroute1.component';
@@ -7,8 +7,8 @@ import {enableProdMode} from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
 import {APP_BASE_HREF} from "@angular/common";
 import { NgReduxModule, NgRedux } from '@angular-redux/store';
-import { rootReducer, IAppState, INITIAL_STATE } from './store';
-import { CounterActions } from './app.actions';
+import { IAppState, CounterActions } from './app2Store';
+import { Globals } from "./globals.service";
 
 const appRoutes: Routes = [
 	{
@@ -31,7 +31,7 @@ enableProdMode();
 		}),
         NgReduxModule
 	],
-	providers: [{provide: APP_BASE_HREF, useValue: '/app2/'}, CounterActions],
+	providers: [{provide: APP_BASE_HREF, useValue: '/app2/'}, CounterActions, Globals],
 	declarations: [
 		App2,
 		Subroute1,
@@ -40,9 +40,16 @@ enableProdMode();
 	bootstrap: [App2]
 })
 export default class MainModule {
-    constructor(@Inject(forwardRef(() => NgRedux)) ngRedux: NgRedux<IAppState>) {
-        ngRedux.configureStore(
-            rootReducer,
-            INITIAL_STATE);
+    constructor(@Inject(forwardRef(() => NgRedux)) private ngRedux: NgRedux<IAppState>,
+                @Inject(forwardRef(() => Globals)) private globals:Globals) {
     }
+
+    setStore(store) {
+        this.ngRedux.provideStore(store);
+	}
+
+    setGlobalEventDistributor(globalEventDistributor) {
+        this.globals.globalEventDistributor = globalEventDistributor;
+	}
+
 }
