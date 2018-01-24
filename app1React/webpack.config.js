@@ -7,7 +7,6 @@ module.exports = {
     },
 
     output: {
-        publicPath: '/release/',
         filename: '[name].js',
         path: path.resolve(__dirname, 'release'),
         libraryTarget: 'amd',
@@ -21,6 +20,17 @@ module.exports = {
                 use: ['babel-loader?cacheDirectory'],
                 exclude: /node_modules/,
             },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            publicPath: '/app1/',
+                        }
+                    }
+                ]
+            }
         ],
     },
 

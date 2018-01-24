@@ -50,6 +50,20 @@ module.exports = {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
             "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+        },
+        proxy: {
+            "/app1": {
+                target: "http://localhost:9001",
+                pathRewrite: {"^/app1" : ""}
+            },
+            "/app2": {
+                target: "http://localhost:9002",
+                pathRewrite: {"^/app2" : ""}
+            },
+            "/app3": {
+                target: "http://localhost:9003",
+                pathRewrite: {"^/app3" : ""}
+            }
         }
     },
 };

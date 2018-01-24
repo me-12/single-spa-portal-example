@@ -7,7 +7,6 @@ module.exports = {
 		store: 'src/app2Store.ts'
 	},
 	output: {
-		publicPath: '/release/',
 		filename: '[name].js',
 		path: path.resolve(__dirname, 'release'),
         libraryTarget: 'umd',
@@ -21,9 +20,20 @@ module.exports = {
 				loader: 'babel-loader',
 			},
 			{
-				test: /\.tsx?$/,
+				test: /\.ts?$/,
 				loader: 'ts-loader',
 			},
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            publicPath: '/app2/',
+						}
+                    }
+                ]
+            }
 		],
 	},
 	resolve: {

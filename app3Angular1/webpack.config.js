@@ -6,7 +6,6 @@ module.exports = {
 		main: 'src/app3.js'
 	},
 	output: {
-		publicPath: '/release/',
 		filename: '[name].js',
 		path: path.resolve(__dirname, 'release'),
         libraryTarget: 'umd',

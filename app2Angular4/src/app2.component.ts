@@ -2,11 +2,13 @@ import { Component, forwardRef, Inject, OnDestroy } from '@angular/core';
 import { NgRedux } from '@angular-redux/store';
 import { IAppState, CounterActions } from "./app2Store";
 import {Globals} from "./globals.service";
+import angularImg = require("../assets/angular-logo.png");
 
 @Component({
 	selector: 'app2',
 	template: `
 		<div style="margin-top: 100px;">
+            <img [src]="angularImg" style="width: 100px;"/> <br />
 			This was rendered by App2 which is written in Angular 4
 		</div>
         <br />
@@ -36,6 +38,7 @@ import {Globals} from "./globals.service";
 })
 export class App2 {
     count: number;
+    angularImg: any;
     subscription;
 
     constructor(
@@ -44,6 +47,7 @@ export class App2 {
         @Inject(forwardRef(() => Globals)) private globals:Globals) {
         this.subscription = ngRedux.select<number>('count')
             .subscribe(newCount => this.count = newCount);
+        this.angularImg = angularImg;
     }
 
     ngOnDestroy() {
