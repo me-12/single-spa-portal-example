@@ -1,4 +1,4 @@
-import * as singleSpa from '../libs/single-spa'; // waiting for this to be merged: https://github.com/CanopyTax/single-spa/pull/156
+import * as singleSpa from 'single-spa'; // waiting for this to be merged: https://github.com/CanopyTax/single-spa/pull/156
 import { GlobalEventDistributor } from './globalEventDistributor'
 import { loadApp } from './helper'
 

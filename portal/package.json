@@ -14,13 +14,13 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-0": "^6.24.1",
-    "clean-webpack-plugin": "^0.1.16",
+    "clean-webpack-plugin": "^0.1.18",
     "webpack": "^3.4.1",
-    "webpack-dev-server": "^2.8.2"
+    "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
     "copy-webpack-plugin": "^4.3.0",
-    "single-spa": "^3.5.0",
+    "single-spa": "^3.8.1",
     "systemjs": "^0.20.19"
   }
 }

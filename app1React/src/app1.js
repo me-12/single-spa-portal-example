@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import singleSpaReact from '../libs/single-spa-react'; // waiting for this to be merged: https://github.com/CanopyTax/single-spa-react/pull/27
+import singleSpaReact from 'single-spa-react';
 import Root from './root.component.js';
 
 const reactLifecycles = singleSpaReact({
