@@ -6,7 +6,7 @@ This example is based on [simple-single-spa-webpack-example](https://github.com/
 - [x] Isolate SPA's with their own build process
 - [x] Load SPA's on demand with SystemJS
 - [x] Provide a way to communicate between each SPA
-- [ ] Get assets (like images, fonts, css, etc.) coming from different servers to work
+- [x] Get assets (like images, fonts, css, etc.) coming from different servers to work
 - [ ] Support multiple Angular versions without zone.js conflicts
 
 ## inter-app-communication
