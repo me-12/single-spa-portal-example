@@ -1,4 +1,4 @@
-import * as singleSpa from '../libs/single-spa'; // waiting for this to be merged: https://github.com/CanopyTax/single-spa/pull/156
+import * as singleSpa from 'single-spa'; // waiting for this to be merged: https://github.com/CanopyTax/single-spa/pull/156
 
 export function hashPrefix(prefix) {
     return function (location) {
@@ -16,5 +16,6 @@ export async function loadApp(name, hash, appURL, storeURL, globalEventDistribut
 
     // register the app with singleSPA and pass a reference to the store of the app as well as a reference to the globalEventDistributor
     const customProps = { store: storeModule.storeInstance, globalEventDistributor: globalEventDistributor };
+
     singleSpa.registerApplication(name, () => SystemJS.import(appURL), hashPrefix(hash), customProps);
 }

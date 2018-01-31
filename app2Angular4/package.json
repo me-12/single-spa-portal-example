@@ -16,12 +16,12 @@
     "babel-preset-stage-0": "^6.24.1",
     "file-loader": "^1.1.6",
     "ts-loader": "^2.3.2",
-    "typescript": "^2.4.2",
+    "typescript": "^2.7.1",
     "webpack": "^3.4.1",
-    "webpack-dev-server": "^2.8.2"
+    "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
-    "@angular-redux/store": "^7.0.2",
+    "@angular-redux/store": "^7.1.0",
     "@angular/common": "^4.3.3",
     "@angular/compiler": "^4.3.3",
     "@angular/core": "^4.3.3",
@@ -29,11 +29,11 @@
     "@angular/platform-browser-dynamic": "^4.3.3",
     "@angular/router": "^4.3.6",
     "core-js": "^2.4.1",
-    "es6-promise": "^4.1.1",
+    "es6-promise": "^4.2.4",
     "redux": "^3.7.2",
-    "reflect-metadata": "^0.1.10",
+    "reflect-metadata": "^0.1.12",
     "rxjs": "^5.4.2",
-    "single-spa-angular2": "^1.1.0",
-    "zone.js": "^0.8.16"
+    "single-spa-angular2": "^1.2.0",
+    "zone.js": "^0.8.20"
   }
 }

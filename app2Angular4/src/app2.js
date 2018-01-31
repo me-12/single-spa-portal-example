@@ -1,6 +1,6 @@
 import 'zone.js';
 import 'reflect-metadata';
-import singleSpaAngular from '../libs/single-spa-angular2'; // waiting for this to be merged: https://github.com/CanopyTax/single-spa-angular2/pull/7
+import singleSpaAngular from 'single-spa-angular2';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import mainModule from './main-module.ts';
 import {Router} from '@angular/router';
