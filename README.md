@@ -9,6 +9,13 @@ This example is based on [simple-single-spa-webpack-example](https://github.com/
 - [x] Get assets (like images, fonts, css, etc.) coming from different servers to work
 - [ ] ~~Support multiple Angular versions without zone.js conflicts~~ I decided to not add this feature to the project. For details see [Multiple Angular Apps](#multiple-angular-apps)
 
+## How to run this project
+1. Clone this project
+2. Jump into each folder and do:
+   - `npm install`
+   - `npm run watch`
+4. Open up http://localhost:9000 in a web browser.
+
 ## inter-app-communication
 This topic has been discussed multiple times (i.e. [here](https://github.com/CanopyTax/single-spa/issues/112) or [here](https://github.com/CanopyTax/single-spa/issues/107)). There may be many solutions to solve this problem. In this repository I want you to show a solution that meets the following requirements:
 
@@ -44,14 +51,6 @@ Here is a graphic which illustrates what actually happens:
 ### Cons:
 As already mentioned, the biggest disadvantage is that all stores have to be loaded when the root-application loads. The reason for this is that we are building a project that will have a huge application state being entirely in the browser. The user will likely input 1h of data without any server communication and once he is done, he will save everything with one click. 
 This must not necessarily be your use-case. For example if you are only interested in inter-app-communication with any currently active app, you may not need to load all states beforehand but rather load them while the apps mount.  
-
-## How to use it
-1. Clone this project
-2. Jump into each folder and do:
-   - `npm install`
-   - `npm run watch`
-4. Open up http://localhost:9000 in a web browser.
-
 
 ## Multiple Angular Apps
 The big issue with Angular 2+ is, that it (or third party libraries which Angular depends on) pollute the global window object. One such library is Zone.js. Zone.js monkey patches all async events and add its reference to the window object. If you have multiple Angular apps running, Angular will complain that Zone.js is already loaded.
