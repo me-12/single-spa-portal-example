@@ -7,7 +7,7 @@ This example is based on [simple-single-spa-webpack-example](https://github.com/
 - [x] Load SPA's on demand with SystemJS
 - [x] Provide a way to communicate between each SPA
 - [x] Get assets (like images, fonts, css, etc.) coming from different servers to work
-- [ ] Support multiple Angular versions without zone.js conflicts
+- [ ] ~~Support multiple Angular versions without zone.js conflicts~~ I decided to not add this feature to the project. For details see [Multiple Angular Apps](#multiple-angular-apps)
 
 ## inter-app-communication
 This topic has been discussed multiple times (i.e. [here](https://github.com/CanopyTax/single-spa/issues/112) or [here](https://github.com/CanopyTax/single-spa/issues/107)). There may be many solutions to solve this problem. In this repository I want you to show a solution that meets the following requirements:
@@ -51,3 +51,14 @@ This must not necessarily be your use-case. For example if you are only interest
    - `npm install`
    - `npm run watch`
 4. Open up http://localhost:9000 in a web browser.
+
+
+## Multiple Angular Apps
+The big issue with Angular 2+ is, that it (or third party libraries which Angular depends on) pollute the global window object. One such library is Zone.js. Zone.js monkey patches all async events and add its reference to the window object. If you have multiple Angular apps running, Angular will complain that Zone.js is already loaded.
+
+One possible solution is to separate Zone.js from all Angular apps and load Zone.js only once. I didn't like this solution because as soon as we have multiple different Angular versions as apps in the portal, it may be possible that some of them require different Zone.js versions. Which will break everything at that point.
+
+The other solution I found is to load every Angular app in its own iframe. Doing that, every Angular app runs completely isolated. You can then set the render target for angular to the parent window. With this solution angular runs in a complete isolated context but renders all content to the main DOM. Sadly this is also not the perfect solution since you open up many other issues you have to deal with. I.e. you need to manually put all CSS styles from the iframe to the parent window. Another issue is that angular router can not access the browser URL any longer. 
+
+Even though I got most issues sorted out, I decided to not add this solution to this project, because of two reasons. First, the solution didn't feel mature or good. It was rather hacky in some points. Second, it increased the complexity of this project immensely. And I think it is already too complex anyways.
+
