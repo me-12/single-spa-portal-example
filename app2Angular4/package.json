@@ -11,17 +11,17 @@
   "homepage": "",
   "devDependencies": {
     "babel-core": "^6.25.0",
-    "babel-loader": "^7.1.1",
+    "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-0": "^6.24.1",
-    "file-loader": "^1.1.6",
+    "file-loader": "^1.1.11",
     "ts-loader": "^2.3.2",
-    "typescript": "^2.7.1",
-    "webpack": "^3.4.1",
-    "webpack-dev-server": "^2.11.1"
+    "typescript": "^2.7.2",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.2"
   },
   "dependencies": {
-    "@angular-redux/store": "^7.1.0",
+    "@angular-redux/store": "^7.1.1",
     "@angular/common": "^4.3.3",
     "@angular/compiler": "^4.3.3",
     "@angular/core": "^4.3.3",
