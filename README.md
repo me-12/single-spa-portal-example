@@ -13,8 +13,17 @@ This example is based on [simple-single-spa-webpack-example](https://github.com/
 1. Clone this project
 2. Jump into each folder and do:
    - `npm install`
-   - `npm run watch`
+   - `npm run watch:portal`
 4. Open up http://localhost:9000 in a web browser.
+
+## npm tasks
+`watch:portal`: Builds the app as UMD module with singleSPA as middleware to consume the app by the portal. Changes are automatically detected.
+
+`release:portal`: Releases the app as UMD module and outputs all contents to a folder. You can upload the produced file in production to your webserver.
+
+`watch:standalone`: If you just want to develop the single app without the whole portal, you can use this task. Check the console log to see which port the app is being served from. This task is OPTIONAL! For now this task only exists on the Vue project to serve as an example.
+
+`release:standalone`: As with the `watch:standlone` taks, this builds the app as stand alone version (no portal needed). This task is OPTIONAL! For now this task only exists on the Vue project to serve as an example.
 
 ## inter-app-communication
 This topic has been discussed multiple times (i.e. [here](https://github.com/CanopyTax/single-spa/issues/112) or [here](https://github.com/CanopyTax/single-spa/issues/107)). There may be many solutions to solve this problem. In this repository I want you to show a solution that meets the following requirements:
