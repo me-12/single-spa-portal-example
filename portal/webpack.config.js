@@ -51,6 +51,7 @@ module.exports = {
             "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
             "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
         },
+		// Proxy config for development purposes. In production, you would configure you webserver to do something similar.
         proxy: {
             "/app1": {
                 target: "http://localhost:9001",

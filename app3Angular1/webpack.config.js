@@ -3,7 +3,7 @@ const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin')
 
 module.exports = {
 	entry: {
-		main: 'src/app3.js'
+		singleSpaEntry: 'src/singleSpaEntry.js'
 	},
 	output: {
 		filename: '[name].js',

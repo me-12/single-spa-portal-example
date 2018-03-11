@@ -1,6 +1,6 @@
 import { Component, forwardRef, Inject, OnDestroy } from '@angular/core';
 import { NgRedux } from '@angular-redux/store';
-import { IAppState, CounterActions } from "./app2Store";
+import { IAppState, CounterActions } from "./store";
 import {Globals} from "./globals.service";
 import angularImg = require("../assets/angular-logo.png");
 
