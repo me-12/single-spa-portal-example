@@ -2,12 +2,12 @@ import Vue from 'vue'
 import singleSpaVue from 'single-spa-vue';
 import App from './App.vue'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 const vueLifecycles = singleSpaVue({
     Vue,
     appOptions: {
-        el: domElementGetter(),
+        el: '#app4',
         render: h => h(App)
     }
 });
@@ -16,15 +16,16 @@ export const bootstrap = [
     vueLifecycles.bootstrap,
 ];
 
-export const mount = [
-    vueLifecycles.mount,
-];
+export function mount() {
+    createDomElement();
+    return vueLifecycles.mount();
+}
 
 export const unmount = [
     vueLifecycles.unmount,
 ];
 
-function domElementGetter() {
+function createDomElement() {
     // Make sure there is a div for us to render into
     let el = document.getElementById('app4');
 
@@ -33,5 +34,5 @@ function domElementGetter() {
         el.id = 'app4';
         document.body.appendChild(el);
     }
-    return '#app4';
+    return el;
 }

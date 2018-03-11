@@ -1,9 +1,8 @@
 const path = require('path');
-const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
 
 module.exports = {
 	entry: {
-		main: 'src/app4.js'
+		singleSpaEntry: 'src/singleSpaEntry.js'
 	},
 	output: {
 		filename: '[name].js',
@@ -31,7 +30,8 @@ module.exports = {
                 test: /\.(png|jpg|gif|svg)$/,
                 loader: 'file-loader',
                 options: {
-                    name: '[name].[ext]?[hash]'
+                    name: '[name].[ext]?[hash]',
+                    publicPath: '/app4/',
                 }
             }
         ]
