@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Angular 4 App that will be bundled into a library to be loaded on demand by a simpleSPA Portal App",
   "scripts": {
-    "watch": "webpack-dev-server --port 9002",
-    "build": "webpack -p --progress"
+    "watch:portal": "webpack-dev-server --port 9002",
+    "build:portal": "webpack -p --progress"
   },
   "author": "Michael Ruecker",
   "license": "MIT",

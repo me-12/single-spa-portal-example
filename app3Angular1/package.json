@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Portal app that builds the foundation of multiple SPAs",
   "scripts": {
-    "watch": "webpack-dev-server --port 9003",
-    "build": "webpack -p --progress"
+    "watch:portal": "webpack-dev-server --port 9003",
+    "build:portal": "webpack -p --progress"
   },
   "author": "Michael Ruecker",
   "license": "MIT",

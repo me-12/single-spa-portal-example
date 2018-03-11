@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "watch": "webpack-dev-server --port 9004"
+    "watch:standalone": "vue-cli-service serve",
+    "build:standalone": "vue-cli-service build",
+    "watch:portal": "webpack-dev-server --port 9004",
+    "build:portal": "webpack -p --progress",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "single-spa-vue": "^1.0.1",
@@ -16,7 +17,6 @@
     "@vue/cli-plugin-babel": "^3.0.0-beta.6",
     "@vue/cli-plugin-eslint": "^3.0.0-beta.6",
     "@vue/cli-service": "^3.0.0-beta.6",
-    "vue-template-compiler": "^2.5.13",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.2"
   },

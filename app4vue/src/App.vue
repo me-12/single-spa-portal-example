@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app4">
     <img src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
@@ -17,12 +17,12 @@ export default {
 </script>
 
 <style>
-#app {
+#app4 {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 100px;
 }
 </style>
