@@ -1,4 +1,4 @@
-import {forwardRef, Inject, Injectable, NgModule} from '@angular/core';
+import {Inject, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {App2} from './app2.component';
 import {Subroute1} from './subroute1.component';
@@ -39,17 +39,13 @@ enableProdMode();
 	],
 	bootstrap: [App2]
 })
-export default class MainModule {
-    constructor(@Inject(forwardRef(() => NgRedux)) private ngRedux: NgRedux<IAppState>,
-                @Inject(forwardRef(() => Globals)) private globals:Globals) {
+export class MainModule {
+    constructor(private ngRedux: NgRedux<IAppState>,
+                private globals:Globals,
+                @Inject('localStoreRef') private localStoreRef: any,
+                @Inject('globalEventDispatcherRef') private globalEventDispatcherRef: any) {
+
+        this.ngRedux.provideStore(localStoreRef);
+        this.globals.globalEventDistributor = globalEventDispatcherRef;
     }
-
-    setStore(store) {
-        this.ngRedux.provideStore(store);
-	}
-
-    setGlobalEventDistributor(globalEventDistributor) {
-        this.globals.globalEventDistributor = globalEventDistributor;
-	}
-
 }

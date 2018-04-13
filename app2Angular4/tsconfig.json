@@ -5,6 +5,7 @@
 		"module": "commonjs",
     	"moduleResolution": "node",
 		"lib": ["es5", "es6", "dom"],
-    	"experimentalDecorators": true
+    	"experimentalDecorators": true,
+		"emitDecoratorMetadata": true
 	}
 }

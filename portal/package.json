@@ -21,6 +21,7 @@
   "dependencies": {
     "copy-webpack-plugin": "^4.5.1",
     "single-spa": "^3.9.0",
-    "systemjs": "^0.20.19"
+    "systemjs": "^0.20.19",
+    "zone.js": "^0.8.26"
   }
 }
