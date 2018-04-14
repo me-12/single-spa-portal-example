@@ -7,7 +7,8 @@ This example is based on [simple-single-spa-webpack-example](https://github.com/
 - [x] Load SPA's on demand with SystemJS
 - [x] Provide a way to communicate between each SPA
 - [x] Get assets (like images, fonts, css, etc.) coming from different servers to work
-- [ ] ~~Support multiple Angular versions without zone.js conflicts~~ I decided to not add this feature to the project. For details see [Multiple Angular Apps](#multiple-angular-apps)
+- [x] Support multiple Angular versions without zone.js conflicts. For details see [Multiple Angular Apps](#multiple-angular-apps)
+- [x] Support Angular AOT Builds
 
 ## How to run this project
 1. Clone this project
@@ -66,11 +67,9 @@ The big issue with Angular 2+ is, that it (or third party libraries which Angula
 
 One possible solution is to separate Zone.js from all Angular apps and load Zone.js only once in the portal. This may not be the best solution because as soon as you have multiple different Angular versions as apps in the portal, it may be possible that some of them require different Zone.js versions. Which may break everything at that point. Even though it is not a great solution, it may be the best solution we have with the current state of angular.
 
-The other solution I found is to load every Angular app in its own iframe. Doing that, every Angular app runs completely isolated. You can then set the render target for angular to the parent window. With this solution angular runs in a complete isolated context but renders all content to the main DOM. Sadly this is also not the perfect solution since you open up many other issues you have to deal with. A few examples are: 
+The other solution I found is to load every Angular app in its own iframe. Doing that, every Angular app runs completely isolated. You can then set the render target for Angular to the parent window. With this solution Angular runs in a complete isolated context but renders all content to the main DOM. Sadly this is also not the perfect solution since you open up many other issues you have to deal with. A few examples are: 
 - You need to manually put all CSS styles from the iframe to the parent window 
 - The angular router can no longer access the browser URL to update it according to the app routing 
 - You can't use third party UI libraries that depent on document events. (i.e. a dropdown component that wants to know when you click on the document to close it.) 
 
-In the future we may have better solutions like Angular elements to deal with this issue, until then you'r best bet is probably to put a single Zone.js instance into the portal app. 
-
-Since neither solution is perfect, I decided to not add anything to this example project.
+In the future we may have better solutions like Angular elements to deal with this issue, until then our best bet is to put a single Zone.js instance into the portal app. Which is exactly what I did in this example project.
