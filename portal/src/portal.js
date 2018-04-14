@@ -18,6 +18,9 @@ async function init() {
     // app3: The URL "/app4/..." is being redirected to "http://localhost:9004/..." this is done by the webpack proxy (webpack.config.js)
     await loadApp('app4', '/app4', '/app4/singleSpaEntry.js', null, null); // does not have a store, so we pass null
 
+    // app5: The URL "/app5/..." is being redirected to "http://localhost:9005/..." this is done by the webpack proxy (webpack.config.js)
+    await loadApp('app5', '/app5', '/app5/singleSpaEntry.js', '/app5/store.js', globalEventDistributor);
+
     singleSpa.start();
 }
 
