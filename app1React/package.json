@@ -21,10 +21,10 @@
   },
   "dependencies": {
     "prop-types": "^15.6.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
-    "single-spa-react": "^2.2.0"
+    "single-spa-react": "file:../../../workplace/single-spa-react"
   }
 }
