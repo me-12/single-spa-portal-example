@@ -6,18 +6,13 @@ import reactLogo from '../assets/react-logo.png'
 
 export default class Root extends React.Component {
 
-    state = {store: null, globalEventDistributor: null};
+    state = {
+      store: this.props.customProps.store,
+      globalEventDistributor: this.props.customProps.globalEventDistributor,
+    };
 
     componentDidCatch(error, info) {
         console.log(error, info);
-    }
-
-    setStore(store) {
-        this.setState({... this.state, store: store});
-    }
-
-    setGlobalEventDistributor(globalEventDistributor) {
-        this.setState({... this.state, globalEventDistributor: globalEventDistributor});
     }
 
     render() {
