@@ -12,15 +12,18 @@ This example is based on [simple-single-spa-webpack-example](https://github.com/
 
 ## How to run this project
 1. Clone this project
-2. Jump into each folder and do:
+2. Jump into each app folder and do:
    - `npm install`
    - `npm run watch:portal`
+3. Then start the portal with:
+   - `npm install`
+   - `npm run watch`
 4. Open up http://localhost:9000 in a web browser.
 
 ## npm tasks
 `watch:portal`: Builds the app as UMD module with singleSPA as middleware to consume the app by the portal. Changes are automatically detected.
 
-`build:portal`: Releases the app as UMD module and outputs all contents to a folder. You can upload the produced file in production to your webserver. **Hint**: The Angular 5 example is being build with AOT. You can use `npm run build:portal -- --env.analyzeBundle` to see that there is no compiler.js inside the bundle.
+`build:portal`: Releases the app as UMD module and outputs all contents to a folder. You can upload the produced file in production to your webserver. **Hint**: The Angular 6 example is being build with AOT. You can use `npm run build:portal -- --env.analyzeBundle` to see that there is no compiler.js inside the bundle.
 
 `watch:standalone`: If you just want to develop the single app without the whole portal, you can use this task. Check the console log to see which port the app is being served from. This task is OPTIONAL! For now this task only exists on the Vue project to serve as an example.
 
