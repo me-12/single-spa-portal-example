@@ -1,15 +1,15 @@
-import { Component, forwardRef, Inject, OnDestroy } from '@angular/core';
+import { Component, forwardRef, Inject } from '@angular/core';
 import { NgRedux } from '@angular-redux/store';
 import { IAppState, CounterActions } from "./store";
 import {Globals} from "./globals.service";
 import * as angularImg from "../assets/angular-logo.png";
 
 @Component({
-	selector: 'app2',
+	selector: 'app5',
 	template: `
 		<div style="margin-top: 100px;">
             <img [src]="angularImg" style="width: 100px;"/> <br />
-			This was rendered by App2 which is written in Angular 5
+			This was rendered by App5 which is written in Angular 6
 		</div>
         <br />
 
@@ -30,13 +30,13 @@ import * as angularImg from "../assets/angular-logo.png";
         </div>
 		
         <br />
-		<a [routerLink]="['/subroute1']" routerLinkActive="active">Angular route 1</a>
+		<a [routerLink]="['/subroute1']" routerLinkActive="active">Angular route 1</a>&nbsp;
 		<a [routerLink]="['/subroute2']" routerLinkActive="active">Angular route 2</a>
 
 		<router-outlet></router-outlet>
 	`,
 })
-export class App2 {
+export class App5 {
     count: number;
     angularImg: any;
     subscription;

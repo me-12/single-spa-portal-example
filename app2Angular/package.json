@@ -1,0 +1,46 @@
+{
+  "name": "single-spa-portal-example-angular",
+  "version": "1.0.0",
+  "description": "Angular App that will be bundled into a library to be loaded on demand by a simpleSPA Portal App",
+  "scripts": {
+    "watch:portal": "webpack-dev-server --port 9002",
+    "build:portal": "webpack -p --progress --env.prod"
+  },
+  "author": "Michael Ruecker",
+  "license": "MIT",
+  "homepage": "",
+  "devDependencies": {
+    "@angular-devkit/core": "^0.6.6",
+    "@angular-devkit/schematics": "^0.6.6",
+    "@angular/cli": "^6.0.6",
+    "@angular/compiler-cli": "^6.0.6",
+    "@ngtools/webpack": "^6.0.8",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "copy-webpack-plugin": "^4.5.1",
+    "file-loader": "^1.1.11",
+    "ts-loader": "^4.4.1",
+    "typescript": "~2.7.2",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.12.1",
+    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "@angular-redux/store": "^9.0.0",
+    "@angular/common": "^6.0.6",
+    "@angular/compiler": "^6.0.6",
+    "@angular/core": "^6.0.6",
+    "@angular/platform-browser": "^6.0.6",
+    "@angular/platform-browser-dynamic": "^6.0.6",
+    "@angular/router": "^6.0.6",
+    "core-js": "^2.5.7",
+    "es6-promise": "^4.2.4",
+    "redux": "^4.0.0",
+    "reflect-metadata": "^0.1.12",
+    "rxjs": "^6.2.1"
+  }
+}

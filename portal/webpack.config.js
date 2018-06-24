@@ -42,6 +42,7 @@ module.exports = {
 	devtool: 'source-map',
 	externals: [
 	],
+    mode: 'development',
     devServer: {
 		contentBase: './release',
         historyApiFallback: true,

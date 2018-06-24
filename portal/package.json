@@ -9,19 +9,20 @@
   "author": "Michael Ruecker",
   "license": "MIT",
   "devDependencies": {
-    "babel-core": "^6.25.0",
+    "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.0",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
     "clean-webpack-plugin": "^0.1.19",
-    "webpack": "^3.11.0",
-    "webpack-dev-server": "^2.11.2"
+    "webpack": "^4.12.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
     "copy-webpack-plugin": "^4.5.1",
     "single-spa": "^3.9.0",
-    "systemjs": "^0.20.19",
+    "systemjs": "^0.21.4",
     "zone.js": "^0.8.26"
   }
 }
