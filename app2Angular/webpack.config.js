@@ -127,6 +127,7 @@ module.exports = function (env) {
                 'node_modules'
             ]
         },
+        mode: 'development',
         devtool: prodMode ? 'none' : 'inline-sourcemap',
         externals: [],
         plugins: plugins,

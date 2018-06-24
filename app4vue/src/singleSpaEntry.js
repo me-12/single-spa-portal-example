@@ -9,16 +9,16 @@ const vueLifecycles = singleSpaVue({
     appOptions: {
         el: '#app4',
         render: h => h(App)
-    }
+}
 });
 
 export const bootstrap = [
     vueLifecycles.bootstrap,
 ];
 
-export function mount() {
+export function mount(props) {
     createDomElement();
-    return vueLifecycles.mount();
+    return vueLifecycles.mount(props);
 }
 
 export const unmount = [

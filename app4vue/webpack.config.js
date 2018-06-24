@@ -1,4 +1,5 @@
 const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
 	entry: {
@@ -17,8 +18,8 @@ module.exports = {
                 loader: 'vue-loader',
                 options: {
                     loaders: {
+                        js: 'babel-loader'
                     }
-                    // other vue-loader options go here
                 }
             },
             {
@@ -33,6 +34,13 @@ module.exports = {
                     name: '[name].[ext]?[hash]',
                     publicPath: '/app4/',
                 }
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'vue-style-loader',
+                    'css-loader'
+                ]
             }
         ]
     },
@@ -48,11 +56,12 @@ module.exports = {
 			'node_modules',
 		],
 	},
+    mode: 'development',
 	devtool: 'none',
 	externals: [
 	],
 	plugins: [
-
+        new VueLoaderPlugin()
 	],
     devServer: {
         historyApiFallback: true,
