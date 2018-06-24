@@ -25,8 +25,8 @@ export function mount(props) {
     createDomElement();
 
     return platformBrowserDynamic([
-        {provide: 'localStoreRef', useValue: props.customProps.store },
-        {provide: 'globalEventDispatcherRef', useValue: props.customProps.globalEventDistributor }])
+        {provide: 'localStoreRef', useValue: props.store },
+        {provide: 'globalEventDispatcherRef', useValue: props.globalEventDistributor }])
         .bootstrapModule(MainModule).then(module => {
             return spaProps.bootstrappedModule = module;
         });
