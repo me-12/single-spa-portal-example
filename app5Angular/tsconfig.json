@@ -2,9 +2,9 @@
 	"compilerOptions": {
 		"sourceMap": true,
 		"target": "es5",
-		"module": "commonjs",
+		"module": "es2015",
     	"moduleResolution": "node",
-		"lib": ["es5", "es6", "dom"],
+		"lib": ["es2017", "dom"],
     	"experimentalDecorators": true,
 		"emitDecoratorMetadata": true
 	}
