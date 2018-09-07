@@ -76,3 +76,7 @@ The other solution I found is to load every Angular app in its own iframe. Doing
 - You can't use third party UI libraries that depent on document events. (i.e. a dropdown component that wants to know when you click on the document to close it.) 
 
 In the future we may have better solutions like Angular elements to deal with this issue, until then our best bet is to put a single Zone.js instance into the portal app. Which is exactly what I did in this example project.
+
+## Forks
+- https://github.com/tsukhu/single-spa-portal-monorepo (If you plan to use a monorepo with multiple apps maintained by the same team, you may be interested in this fork which integrates yarn workspaces + lerna to simplify the development process. For more details see: [here](https://github.com/me-12/single-spa-portal-example/issues/45))
+
